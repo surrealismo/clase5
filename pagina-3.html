@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>SVG con D3</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<nav>
+  <select onchange="window.location=this.options[this.selectedIndex].value">
+    <option value="">-------</option>
+    <option value="index.html">Portada</option>
+    <option value="pagina-1.html">SVG a secas</option>
+    <option value="pagina-2.html">SVG con Illustrator</option>
+    <option value="pagina-3.html">SVG con D3</option>
+    <option value="pagina-4.html">SVG con D3 y variables</option>
+    <option value="pagina-5.html">SVG con D3 y data</option>
+  </select>
+</nav>
+<!--Mucha atención con el elemento que sigue-->
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script>
+  var dibujo = d3.select("body").append("svg").attr("width",400).attr("height",400).style("background-color","silver")
+  dibujo.append("circle").attr("cx",100).attr("cy",200).attr("r","17").attr("fill","pink")
+  dibujo.append("text").attr("x",100).attr("y",300).attr("text-anchor","middle").attr("fill","gray").text("Femicidios 2016 CHILE")
+  dibujo.append("circle").attr("cx",300).attr("cy",200).attr("r","48").attr("fill","red")
+  dibujo.append("text").attr("x",300).attr("y",300).attr("text-anchor","middle").attr("fill","gray").text("Femicidios 2016  PERÚ")
+</script>
+<!--Creo el elemento y pongo los elementos dentro suyo mediante una biblioteca de JavaScript que opera con SVG, HTML y datos-->
+</body>
+</html>

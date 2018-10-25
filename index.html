@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Portada</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<nav>
+  <select onchange="window.location=this.options[this.selectedIndex].value">
+    <option value="">-------</option>
+    <option value="index.html">Portada</option>
+    <option value="pagina-1.html">SVG a secas</option>
+    <option value="pagina-2.html">SVG con Illustrator</option>
+    <option value="pagina-3.html">SVG con D3</option>
+    <option value="pagina-4.html">SVG con D3 y variables</option>
+    <option value="pagina-5.html">SVG con D3 y data</option>
+  </select>
+</nav>
+<svg width="400" height="400">
+  <a xlink:href="https://www.w3schools.com/graphics/svg_rect.asp" target="_blank">  
+    <text x="200" y="200" fill="blue" text-anchor="middle">Hola SVG! como estas </text>
+  </a>
+  Utilizaremos este elemento, y su propio dialecto.
+</svg>
+  
+  <script>
+var request = new XMLHttpRequest();
+request.open('GET', 'http://api.open-notify.org/astros.json', true);
+request.onload = function () {
+	var data = JSON.parse(this.response);
+	console.log(data);
+}
+request.send();
+</script>
+  
+  
+</body>
+</html>

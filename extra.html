@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+<title>JavaScript</title>
+</head>
+<body>
+<p>La tasa de desempleo está en <span id="demo"></span></p>
+<script>
+var request = new XMLHttpRequest();
+request.open('GET', 'https://mindicador.cl/api/tasa_desempleo', true);
+request.onload = function () {
+	var data = JSON.parse(this.response);
+	console.log(data);
+	document.getElementById("demo").innerHTML = data.serie[0].valor;
+}
+request.send();
+</script>
+</body>
+</html>
